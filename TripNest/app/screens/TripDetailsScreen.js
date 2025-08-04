@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import { auth, db } from '../../firebase/config';
 import { doc, updateDoc } from 'firebase/firestore';
+import WeatherCard from '../components/WeatherCard';
 
 export default function TripDetailsScreen({ route, navigation }) {
   const { trip } = route.params;
@@ -79,6 +80,12 @@ export default function TripDetailsScreen({ route, navigation }) {
         />
       </View>
 
+      {destination && (
+        <View style={{ marginTop: 20 }}>
+          <Text style={styles.weatherTitle}>Weather in {destination}</Text>
+          <WeatherCard city={destination} />
+        </View>
+      )}
     </ScrollView>
   );
 }

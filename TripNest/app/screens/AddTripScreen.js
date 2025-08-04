@@ -8,6 +8,8 @@ import {
   StyleSheet,
   Alert,
 } from 'react-native';
+import { auth, db } from '../../firebase/config';
+import { collection, addDoc } from 'firebase/firestore';
 
 export default function AddTripScreen({ navigation }) {
   const [destination, setDestination] = useState('');

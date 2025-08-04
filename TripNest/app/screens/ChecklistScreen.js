@@ -9,6 +9,8 @@ import {
   StyleSheet,
   TouchableOpacity,
 } from 'react-native';
+import { auth, db } from '../../firebase/config';
+import { collection, addDoc, getDocs, deleteDoc, doc } from 'firebase/firestore';
 
 export default function ChecklistScreen({ route }) {
   const { tripId } = route.params;
